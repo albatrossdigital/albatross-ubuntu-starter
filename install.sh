@@ -4,7 +4,7 @@
 ###
 ###  Albatross Digital Ubuntu Dev Enviornment
 ###
-###  Copyright (C) 2011 Albatross Digital
+###  Copyright (C) 2013 Albatross Digital
 ###  www.albatrossdigital.com
 ###
 ###  This program is free software. You can
@@ -38,9 +38,9 @@
 sudo apt-get install -y git
 
 # sublime
-sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-get update
-sudo apt-get install -y sublime-text
+sudo apt-get install sublime-text-installer
 
 # drupal sublime
 git clone https://github.com/phase2/sublime-drupal.git
@@ -123,23 +123,31 @@ sudo apt-get install openjdk-6-jdk solr-tomcat
 
 # insync (for Google Drive)
 # this assumes you are using linux mint cinnamon
-sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-stable
-sudo apt-get update
-sudo apt-get install python-nemo
-wget -qO - https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key \
-  | sudo apt-key add -
-sudo echo "deb http://apt.insynchq.com/mint nadia non-free" >> /etc/apt/sources.list
-sudo apt-get install insync-beta-cinnamon
+#sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-stable
+#sudo apt-get update
+#sudo apt-get install python-nemo
+#wget -qO - https://d2t3ff60b2tol4.cloudfront.net/services@insynchq.com.gpg.key \
+#  | sudo apt-key add -
+#sudo echo "deb http://apt.insynchq.com/mint nadia non-free" >> /etc/apt/sources.list
+#sudo apt-get install insync-beta-cinnamon
 
 
 # install node.js + redis + mongodb from http://apptob.org/
 wget http://apptob.org/myscript/1360624649937.sh && chmod +x 1360624649937.sh && sudo ./1360624649937.sh
 
+# install grunt and dependancies
+npm install -g grunt
+npm install -g grunt-cli
+npm install
+
+# meteor (node.js framework)
+curl https://install.meteor.com | /bin/shbu
+
+
 # set up workspace
 mkdir ~/workspace
 cp vhost.sh ~/workspace/vhost.sh
 
-#TODO: grunt theme stuff (flight), node, meteor
 
 # msg
 echo
