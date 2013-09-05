@@ -1,7 +1,7 @@
 albatross-ubuntu-starter
 ========================
 
-All the software fit to develop websites.  A bash script to set up the dev enviornments for Albatross Digital. Includes LAMP for Drupal, node.js, sublime3 and more.
+All the software fit to develop websites.  A bash script to set up the dev enviornments for Albatross Digital on an clean Ubuntu (Linux Mint) OS. Includes LAMP for Drupal, node.js, sublime3 and more.
 
 
 Installation
