@@ -47,7 +47,7 @@ git clone https://github.com/phase2/sublime-drupal.git
 bash sublime-drupal/SublimeDrupal.sh
 
 #chromium
-#sudo apt-get install -y chromium-browser
+sudo apt-get install -y chromium-browser
 
 # LAMP with xdebug
 sudo apt-get install -y apache2 php5-xdebug php5-dev php5-mysql php5-gd mysql-server libapache2-mod-php5 php5-curl php5-imagick php5-ffmpeg phpmyadmin php5-cli php5-mcrypt php5-imap
@@ -132,8 +132,11 @@ sudo apt-get install openjdk-6-jdk solr-tomcat
 #sudo apt-get install insync-beta-cinnamon
 
 
-# install node.js + redis + mongodb from http://apptob.org/
-wget http://apptob.org/myscript/1360624649937.sh && chmod +x 1360624649937.sh && sudo ./1360624649937.sh
+# install latest node.js + redis + mongodb
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs redis-server mongodb
+
 
 # install grunt and dependancies
 npm install -g grunt
@@ -141,7 +144,8 @@ npm install -g grunt-cli
 npm install
 
 # meteor (node.js framework)
-curl https://install.meteor.com | /bin/shbu
+wget https://install.meteor.com -O meteor.sh
+sudo bash meteor.sh
 
 
 # set up workspace
