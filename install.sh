@@ -50,14 +50,14 @@ bash sublime-drupal/SublimeDrupal.sh
 sudo apt-get install -y chromium-browser
 
 # LAMP with xdebug
-sudo apt-get install -y apache2 php5-xdebug php5-dev php5-mysql php5-gd mysql-server libapache2-mod-php5 php5-curl php5-imagick php5-ffmpeg phpmyadmin php5-cli php5-mcrypt php5-imap
+sudo apt-get install -y apache2 php5-xdebug php5-dev php5-mysql php5-gd mysql-server libapache2-mod-php5 php5-curl php5-imagick php5-ffmpeg phpmyadmin php5-cli php5-mcrypt php5-imap php-pear
 sudo a2enmod rewrite
 sudo ln -s /usr/share/phpmyadmin /var/www/phpmyadmin
 sudo service apache2 restart
 
 # drush
-sudo apt-get install -y drush
-drush self-update
+pear channel-discover pear.drush.org
+pear install drush/drush
 
 #pythos - pandora player, http://kevinmehall.net/p/pithos/
 #sudo add-apt-repository ppa:kevin-mehall/pithos-daily
@@ -146,6 +146,11 @@ npm install
 # meteor (node.js framework)
 wget https://install.meteor.com -O meteor.sh
 sudo bash meteor.sh
+
+# Toggl client for timetracking
+#sudo add-apt-repository ppa:official-toggl/ppa
+#sudo apt-get update
+#sudo apt-get install desktop-Toggl 
 
 
 # set up workspace
