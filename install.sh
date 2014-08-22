@@ -56,8 +56,13 @@ sudo ln -s /usr/share/phpmyadmin /var/www/phpmyadmin
 sudo service apache2 restart
 
 # drush
-pear channel-discover pear.drush.org
-pear install drush/drush
+sudo apt-get install curl -y
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+'' >> $HOME/.bashrc
+sed -i '1i export PATH="$HOME/.composer/vendor/bin:$PATH"' $HOME/.bashrc
+source $HOME/.bashrc
+composer global require drush/drush:dev-master
 
 #pythos - pandora player, http://kevinmehall.net/p/pithos/
 #sudo add-apt-repository ppa:kevin-mehall/pithos-daily
@@ -93,9 +98,8 @@ sudo apt-get install -y ttf-mscorefonts-installer
 #sudo gem install compass
 #ln -s /var/lib/gems/1.8/bin/compass /usr/local/bin/compass
 sudo apt-get install -y ruby-full
-sudo apt-get install -y rubygems1.8
 #sudo gem update --system
-sudo gem install compass
+sudo gem install compassl 
 sudo gem install sass
 sudo gem install susy
 sudo gem install compass-rgbapng
@@ -119,7 +123,7 @@ sudo apt-get install -y keepassx
 sudo apt-get install -y gcolor2
 
 # apache solr (running tomcat)
-sudo apt-get install openjdk-6-jdk solr-tomcat
+# sudo apt-get install openjdk-6-jdk solr-tomcat
 
 # insync (for Google Drive)
 # this assumes you are using linux mint cinnamon
