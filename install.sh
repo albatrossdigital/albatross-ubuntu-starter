@@ -38,21 +38,16 @@
 sudo apt-get install -y git
 
 # sublime
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo apt-get update
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+sudo apt-get update -y
 sudo apt-get install sublime-text-installer
 
-# drupal sublime
-git clone https://github.com/phase2/sublime-drupal.git
-bash sublime-drupal/SublimeDrupal.sh
-
-#chromium
-sudo apt-get install -y chromium-browser
 
 # LAMP with xdebug
-sudo apt-get install -y apache2 php5-xdebug php5-dev php5-mysql php5-gd mysql-server libapache2-mod-php5 php5-curl php5-imagick php5-ffmpeg phpmyadmin php5-cli php5-mcrypt php5-imap php-pear
+sudo apt-get install -y apache2 php5-xdebug php5-dev php5-mysql php5-gd mysql-server libapache2-mod-php5 php5-curl php5-imagick phpmyadmin php5-cli php5-mcrypt php5-imap php-pear curl
 sudo a2enmod rewrite
-sudo ln -s /usr/share/phpmyadmin /var/www/phpmyadmin
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+sudo ln -s ~/workspace /var/www/html/workspace
 sudo service apache2 restart
 
 # drush
@@ -64,21 +59,13 @@ sed -i '1i export PATH="$HOME/.composer/vendor/bin:$PATH"' $HOME/.bashrc
 source $HOME/.bashrc
 composer global require drush/drush:dev-master
 
-#pythos - pandora player, http://kevinmehall.net/p/pithos/
-#sudo add-apt-repository ppa:kevin-mehall/pithos-daily
-#sudo apt-get update
-#sudo apt-get install -y pithos
-
-# virtualboxsudo add-apt-repository ppa:mozillateam/firefox-stable
-#sudo apt-get install -y virtualbox-ose
-
 # filezilla
 sudo apt-get install -y filezilla
 
 # ms core fonts
 sudo apt-get install -y ttf-mscorefonts-installer
 
-# sublime
+
 
 
 # compass / sass, following http://ubuntulinuxhelp.com/installing-compass-on-ubuntu/
@@ -146,10 +133,6 @@ sudo apt-get install nodejs redis-server mongodb
 npm install -g grunt
 npm install -g grunt-cli
 npm install
-
-# meteor (node.js framework)
-wget https://install.meteor.com -O meteor.sh
-sudo bash meteor.sh
 
 # Toggl client for timetracking
 #sudo add-apt-repository ppa:official-toggl/ppa

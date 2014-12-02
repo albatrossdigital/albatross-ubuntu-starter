@@ -31,7 +31,7 @@ sudo chown -R $un:www-data $homedir/
 sudo mkdir /var/log/apache2/$sn/
 
 
-# Creation the file with VirtualHost configuration in /etc/apache2/site-available/
+# Creation the file with VirtualHost configuration in /etc/apache2/sites-available/
 sudo echo "
 <VirtualHost *:80>
   ServerAdmin $un@localhost
@@ -50,7 +50,7 @@ sudo echo "
     ServerEnvironment apache apache
   </IfModule>
 </VirtualHost>
-" > /etc/apache2/sites-available/$sn
+" > /etc/apache2/sites-available/${sn}.conf
 
 
 # Add the host to the hosts file
