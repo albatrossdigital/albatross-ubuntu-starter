@@ -9,6 +9,14 @@ Installation
 Just run install.sh:
 `sudo bash install.sh`
 
+#### Manual steps:
+Update in `/etc/php5/apache2/php.ini`:
+```
+memory_limit = 512M
+upload_max_filesize = 100M
+post_max_size = 100M
+```
+
 What's included
 ---------------
 + Sublime2
