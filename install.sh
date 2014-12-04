@@ -91,6 +91,7 @@ sudo gem install sass
 sudo gem install susy
 sudo gem install compass-rgbapng
 
+
 #wine for photoshop cs2, http://wiki.winehq.org/AdobePhotoshop
 sudo apt-get install -y cabextract
 sudo apt-get install -y wine
@@ -123,9 +124,7 @@ sudo apt-get install -y gcolor2
 #sudo apt-get install insync-beta-cinnamon
 
 
-# install latest node.js + redis + mongodb
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
+# install stable node.js + redis + mongodb
 sudo apt-get install nodejs redis-server mongodb
 
 
